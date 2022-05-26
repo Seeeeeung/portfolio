@@ -1,0 +1,379 @@
+/*s : 20210426 스페셜 매장 매장위치 - 스크립트 추가 */
+$(document).ready(function() {
+	$(".storeList .store_btn").each(function(i){
+		$(this).click(function(){
+		  if(!$(this).hasClass("on")){
+			$(".storeList .store_btn").removeClass("on");
+			TweenMax.to($(".storeList .store_btn").find(".arrowIcon") , 0.3, {rotation:0});
+			$(".storeList .store_con").stop(true, true).slideUp(300);
+			$(this).addClass("on");
+			TweenMax.to($(".storeList .store_btn").eq(i).find(".arrowIcon") , 0.3, {rotation:180});
+			$(this).next(".storeList .store_con").stop(true, true).slideDown(300);
+		  }else{
+			$(this).removeClass("on");
+			TweenMax.to($(".storeList .store_btn").eq(i).find(".arrowIcon") , 0.3, {rotation:0});
+			$(this).next(".storeList .store_con").stop(true, true).slideUp(300);
+			
+		  }
+		})
+	});
+});
+
+/*e : 20210426 스페셜 매장 매장위치 - 스크립트 추가 */
+
+/**
+ * 입력값이 사용자가 정의한 포맷 형식인지 체크
+ * 자세한 format 형식은 자바스크립트의 'regular expression'을 참조
+ */
+function isValidFormat(input,format) {
+    if (input.value.search(format) != -1) {
+        return true; //올바른 포맷 형식
+    }
+    return false;
+}
+
+/**
+ * 입력값이 이메일 형식인지 체크
+ * ex) if (!isValidEmail(form.email)) {
+ *         alert("올바른 이메일 주소가 아닙니다.");
+ *     }
+ */
+function isValidEmail(input) {
+//    var format = /^(\S+)@(\S+)\.([A-Za-z]+)$/;
+    var format = /^((\w|[\-\.])+)@((\w|[\-\.])+)\.([A-Za-z]+)$/;
+    return isValidFormat(input,format);
+}
+
+/**
+ * 입력값에 특정 문자(chars)가 있는지 체크
+ * 특정 문자를 허용하지 않으려 할 때 사용
+ * ex) if (containsChars(form.name,"!,*&^%$#@~;")) {
+ *         alert("이름 필드에는 특수 문자를 사용할 수 없습니다.");
+ *     }
+ */
+function containsChars(input,chars) {
+    for (var inx = 0; inx < input.value.length; inx++) {
+       if (chars.indexOf(input.value.charAt(inx)) != -1)
+           return true;
+    }
+    return false;
+}
+
+function checkValue(obj,mtype,vstr) {
+	switch(mtype){
+		case 1:
+			str = "를";
+			str1 = "입력하세요.";
+			break;
+		case 2:
+			str = "을";
+			str1 = "입력하세요.";
+			break;
+		case 3:
+			str = "를";
+			str1 = "선택하세요.";
+			break;
+		case 4:
+			str = "을";
+			str1 = "선택하세요.";
+			break;
+	}
+
+	if (obj.getAttribute('placeholder') != null) {		// By HJu. (2013-02-25)
+		if (obj.value=="" || obj.value==obj.getAttribute('placeholder')) {
+			alert(vstr + str +" "+str1);
+			obj.focus();
+			return false;
+		} else
+			return true;
+	}
+	else {
+		if (obj.value=="") {
+			alert(vstr + str +" "+str1);
+			obj.focus();
+			return false;
+		} else
+			return true;
+	}
+}
+
+function checkLength(obj,TotalLen,vstr) {
+	if (obj.value.length > TotalLen) {
+		alert(vstr + "의 글자수는 "+ TotalLen +"자이하만 가능합니다\r\n\r현재: "+obj.value.length +"자");
+		obj.focus();
+		return false;
+	} else
+		return true;
+}
+
+//글자수 체크
+function checkWordSize(obj, title, max) {
+	if (obj.value.length > max) {
+		obj.blur();
+		obj.value = obj.value.substring(0, max - 1);
+		alert(title + '(은/는) ' + max + '자를 초과할 수 없습니다.');
+		obj.focus();
+	}
+}
+
+/**
+ * 유효성 체크 : 숫자
+ * ex) onkeyup="isNumber(this)"
+ */
+function isNumber(obj) {
+	var Pattern2 = /([^0-9])/;
+	if (obj.value.match(Pattern2)!=null) {
+		alert('숫자만 입력하세요.');
+		obj.value = "";
+		obj.focus();
+		return false;
+	} else {
+		return true;
+	}
+}
+
+function isNumber2(obj,msg) {
+	var Pattern2 = /([^0-9])/;
+	if (obj.value.match(Pattern2)!=null) {		
+		alert(msg+' 숫자만 입력하세요.');
+		obj.value = "";
+		obj.focus();
+		return false;
+	} else {
+		return true;
+	}
+}
+
+function checkEmail(strEmail) {
+    /** 금지사항
+     - @가 2개이상
+     - .이 붙어서 나오는 경우
+     -  @.나  .@이 존재하는 경우
+     - 맨처음이.인 경우 **/
+    var regDoNot = /(@.*@)|(\.\.)|(@\.)|(\.@)|(^\.)/;
+    /** 필수사항
+     - @이전에 하나이상의 문자가 있어야 함
+     - @가 하나있어야 함
+     - Domain명에 .이 하나 이상 있어야 함
+     - Domain명의 마지막 문자는 영문자 2~3개이어야 함 **/
+    var regMust = /^[a-zA-Z0-9\-\.\_]+\@[a-zA-Z0-9\-\.]+\.([a-zA-Z]{2,4})$/;
+
+    if ( !regDoNot.test(strEmail) && regMust.test(strEmail) )
+        return true;
+    else
+        return false;
+}
+// 이메일 도메인 selectbox 선택
+function changeEmailDomain(obj, val) {
+	if (val == "self") {
+		$(obj).attr("readonly", false);
+		obj.value = "";
+		obj.focus();
+	} else {
+		$(obj).attr("readonly", true);
+		obj.value = val;
+	}
+}
+
+/**
+ * 유효성 체크 : 링크 
+ * ex) if (!checkLink(frm.url.value))
+ */
+function checkLink(strLink) {
+    var regMust = /(?:(?:(https?|ftp|telnet):\/\/|[\s\t\r\n\[\]\`\<\>\"\'])((?:[\w$\-_\.+!*\'\(\),]|%[0-9a-f][0-9a-f])*\:(?:[\w$\-_\.+!*\'\(\),;\?&=]|%[0-9a-f][0-9a-f])+\@)?(?:((?:(?:[a-z0-9\-가-힣]+\.)+[a-z0-9\-]{2,})|(?:[\d]{1,3}\.){3}[\d]{1,3})|localhost)(?:\:([0-9]+))?((?:\/(?:[\w$\-_\.+!*\'\(\),;:@&=ㄱ-ㅎㅏ-ㅣ가-힣]|%[0-9a-f][0-9a-f])+)*)(?:\/([^\s\/\?\.:<>|#]*(?:\.[^\s\/\?:<>|#]+)*))?(\/?[\?;](?:[a-z0-9\-]+(?:=[^\s:&<>]*)?\&)*[a-z0-9\-]+(?:=[^\s:&<>]*)?)?(#[\w\-]+)?)/gmi;
+
+	if ( regMust.test(strLink) )
+        return true;
+    else
+        return false;
+}
+
+/**
+ * 쿠키 설정
+ * @param cookieName 쿠키명
+ * @param cookieValue 쿠키값
+ * @param expireDay 쿠키 유효날짜
+ */
+function setCookie( cookieName, cookieValue, expireDate ) {
+	var today = new Date();
+	today.setDate( today.getDate() + parseInt( expireDate ) );
+	document.cookie = cookieName + "=" + escape( cookieValue ) + "; path=/; expires=" + today.toGMTString() + ";";
+}
+function getCookie(sName) {
+	var aCookie = document.cookie.split("; ");
+	for (var i=0; i < aCookie.length; i++) {
+
+	var aCrumb = aCookie[i].split("=");
+	if (sName == aCrumb[0])
+		return unescape(aCrumb[1]);
+	}
+
+	return null;
+}
+
+
+// url 필수
+// w : width, 필수
+// h : height, 필수
+// winl : 숫자로 하면 좌표 아니면 가로 center, default : 가로가운데
+// wint : 숫자로 화면 좌표 아니면 세로 middle, default : 세로가운데
+// scroll : 스크롤바, 'yes' or 'no', default : no
+// name : popup name, defalut : 임의지정
+function openNewWindow(url, w, h, winl, wint, scroll, name) {
+	if(winl == null || winl == '' || isNaN(winl))
+		var winl = (screen.width-w)/2;
+
+    if(wint == null || wint == '' || isNaN(wint))
+    	var wint = (screen.height-h)/2;
+
+    if(scroll == null || scroll != 'yes')
+    	scroll = 'no';
+
+   	if(name == null || name == "")
+   		name = 'pop' + (new Date()).getTime();
+
+	var settings ='toolbar=0,directories=0,status=no,menubar=0,scrollbars=' + scroll + ',resizable=yes,height='+h+','+'width='+w+','+'left='+winl+','+'top='+wint;
+
+	var winObj = window.open(url, name, settings);
+	winObj.focus();
+}
+
+// 우편번호 팝업 창 띄우기
+function openZipCodeSearch(url) {
+	if (url == "") {
+		url = "/popup/pop_find_zipcode.asp";
+	}
+	var w = 438;
+	var h = 520;
+	var scroll = "no";
+	var name = "popup_post";
+
+	openNewWindow(url, w, h, "center", "middle", scroll, name);
+}
+
+// 팝업리사이징
+// bodyscroll : 스크롤바, 'yes' or 'no', default : no
+function windowPopReset(bodyscroll) {
+	if(bodyscroll == null) bodyscroll = "no";
+	window.resizeTo(1, 1); //최초 사이즈 초기화
+	document.body.scroll = bodyscroll;
+	var userBrowser = navigator.userAgent; //고객 브라우져 정보
+	 
+	var winBody = document.body;
+	var marginWidth = parseInt(winBody.leftMargin)+parseInt(winBody.rightMargin); 
+	var marginHeight = parseInt(winBody.topMargin)+parseInt(winBody.bottomMargin);
+	 
+	//if(winl == null || winl == '' || isNaN(winl))	var winl = (screen.width-w)/2;
+	//if(wint == null || wint == '' || isNaN(wint))	var wint = (screen.height-h)/2;		 
+
+	var wid, hei;
+	// 최초 초기값은 익스 8
+	wid = document.documentElement.scrollWidth - document.documentElement.clientWidth + marginWidth + 240; 
+	hei = document.documentElement.scrollHeight -  document.documentElement.offsetHeight + marginHeight + 74;
+	 
+	if(userBrowser.indexOf("MSIE 9") > -1)
+	{
+	wid = document.documentElement.scrollWidth - document.documentElement.clientWidth + marginWidth + 240; 
+	hei = document.documentElement.scrollHeight -  document.documentElement.offsetHeight + marginHeight + 70;
+	}
+	else if(userBrowser.indexOf("Chrome") > -1)
+	{
+	wid = document.body.scrollWidth + 27;
+	hei = document.body.scrollHeight + 58;
+	}
+	//window.moveTo( (window.screen.width - wid) / 2 , 0);
+	window.resizeTo(wid, hei);
+}
+
+
+/**
+ * 선택된 라디오버튼이 있는지 체크
+ */
+function js_Chk_RadioNull(Object) {
+	if (Object.length > 1) {
+		for (var inx = 0; inx < Object.length; inx++) {
+			if (Object[inx].checked) return true;
+		}
+	} else {
+		if (Object.checked) return true;
+	}
+	
+	return false;
+}
+// 텍스트 박스 문자열 길이 반환
+function updateCharInBox(obj, length_limit) {
+	var length = calculate_msglen_nobyte(obj.value);
+
+	if (length > length_limit) {
+		alert("최대 "+ length_limit +"자이므로 초과된 글자수는 자동으로 삭제됩니다.");
+		obj.value = obj.value.replace(/\r\n$/, "");
+		obj.value = assert_msglen_nobyte(obj.value, length_limit);
+		length = calculate_msglen_nobyte(obj.value);
+	}
+	$("#txt_limit").text(length);
+}
+function calculate_msglen_nobyte(message) {
+	var nbytes = 0;
+
+	for (i=0; i<message.length; i++) {
+	   var ch = message.charAt(i);
+	   nbytes += 1;
+	}
+
+	return nbytes;
+}
+function assert_msglen_nobyte(message, maximum) {
+	var inc = 0;
+	var nbytes = 0;
+	var msg = "";
+	var msglen = message.length;
+
+	for (i=0; i<msglen; i++) {
+	   var ch = message.charAt(i);
+	   inc = 1;
+	   if ((nbytes + inc) > maximum) {
+		   break;
+	   }
+	   nbytes += inc;
+	   msg += ch;
+	}
+	//   textlimit.innerText = nbytes;
+	return msg;
+}
+function cutStr(str,limit){
+	var tmpStr = str;
+	var byte_count = 0;
+	var len = str.length;
+	var dot = "";
+
+	for(i=0; i<len; i++){
+		byte_count += chr_byte(str.charAt(i));
+		if(byte_count == limit-1){
+			if(chr_byte(str.charAt(i+1)) == 2){
+				tmpStr = str.substring(0,i+1);
+				dot = "...";
+			}else {
+				if(i+2 != len) dot = "...";
+				tmpStr = str.substring(0,i+2);
+			}
+			break;
+		}else if(byte_count == limit){
+			if(i+1 != len) dot = "...";
+			tmpStr = str.substring(0,i+1);
+			break;
+		}
+
+	}
+	alert(tmpStr+dot);
+	document.writeln(tmpStr+dot);
+	return true;
+}
+
+function chr_byte(chr){
+	if(escape(chr).length > 4)
+		return 2;
+	else
+		return 1;
+}
+
+

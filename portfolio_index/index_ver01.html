@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>김승연 포트폴리오</title>
+  <link rel="stylesheet" href="./font/portfolio.css">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      font-family: 'IM_Hyemin-Bold';
+      font-style: normal;
+    }
+    img {
+      width: 100%;
+    }
+    a {
+      display: block;
+      text-decoration: none;
+    }
+    li {
+      list-style-type: none;
+    }
+    body {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+      display: flex;
+      align-items: center;
+    }
+    #wrap {
+      width: 1093px;
+      height: 560px;
+      margin: auto;
+      border-radius: 30px;
+      background-color: rgba(255,255,255,0.4);
+      box-shadow: 0px 0px 10px #b4cad9;
+    }
+    .slick-slide {
+      width: 100%;
+      padding: 30px;
+    }
+    .site {
+      display: flex !important;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .mockup {
+      width: 50%;
+    }
+    .mockup > a {
+      width: 516px;
+      height: 265px;
+      height: auto;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 5px #ccc;
+    }
+    .contents {
+      width: 430px;
+      padding: 30px;
+      height: 440px;
+      background-color: rgba(255,255,255,0.5);
+      border-radius: 10px;
+      text-align: center;
+    }
+    .contents > .tit {
+      font-size: 35px;
+      color: #333;
+      text-shadow: 0px 0px 5px #ccc;
+    }
+    .contents > .content {
+      width: 85%;
+      height: 40%;
+      padding: 30px;
+      box-shadow: 0 0 10px #ccc;
+      margin-top: 50px;
+      background-color: rgba(0,0,0,0.1);
+      border-radius: 10px;
+      font-size: 20px;
+      text-align: justify;
+      color: #555;
+    }
+    .content > li {
+      height: 35px;
+      line-height: 35px;
+    }
+    .link {
+      width: 100%;
+      height: 50px;
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-between;
+      line-height: 50px;
+    }
+    .link > li {
+      width: 45%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.2);
+      border-radius: 10px;
+      box-shadow: 0 0 10px #e0c3fc;
+      font-size: 20px;
+      transition: all 1s;
+    }
+    .link > li > a {
+      color: #fff;
+      transition: all 1s;
+    }
+    .link > li:hover  {
+      background-color: #e0c3fc;
+    }
+    .link > li:hover > a {
+      color: #555;
+    }
+    .slick-prev {
+      left: -64px !important;
+    }
+    .slick-next {
+      right: -64px !important;
+    }
+    .slick-prev,
+    .slick-next {
+      width: 50px !important;
+      height: 50px !important;
+    }
+    .slick-prev:before, 
+    .slick-next:before {
+      font-size: 50px !important;
+      transition: all 1s;
+    }
+  </style>
+  <!--start of slick.slider css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+  <script src="./js/jquery-3.6.0.js"></script>
+  <!--end of common js-->
+  <!--start of slick.slider js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
+  <script>
+    $(function(){
+      $(".slick-group").slick({
+        dots: false,
+        autoplay: true,
+        speed: 200
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="wrap">
+    <div class="slick-group">
+      <div class="site">
+        <div class="mockup">
+          <a href="./site01/index.html" target="blank"><img src="./img/site01.png" alt="대한민국 구석구석 리뉴얼 사이트 목업"></a>
+        </div>
+        <div class="contents">
+          <h1 class="tit">대한민국 구석구석 리뉴얼</h1>
+          <ul class="content">
+            <li>기획 / 디자인 / 구현</li>
+            <li>반응형</li>
+            <li>작업일 : 40일</li>
+            <li>작업시간 : 기획안 참고</li>
+            <li>기여도 : 100%</li>
+          </ul>
+          <ul class="link">
+            <li><a href="./site01/portfolio.pdf" target="blank">기획안 바로가기</a></li>
+            <li><a href="./site01/index.html" target="blank">사이트 바로가기</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site">
+        <div class="mockup">
+          <a href="./site02/index.html" target="blank"><img src="./img/site02.png" alt="모나미 클론코딩 사이트 목업"></a>
+        </div>
+        <div class="contents">
+          <h1 class="tit">모나미 클론코딩</h1>
+          <ul class="content">
+            <li>구현</li>
+            <li>PC</li>
+            <li>작업시간 : 13시간</li>
+            <li>PlugIn : slick</li>
+            <li>기여도 : 100%</li>
+          </ul>
+          <ul class="link">
+            <li style="width: 100%;"><a href="./site02/index.html" target="blank">사이트 바로가기</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site">
+        <div class="mockup">
+          <a href="./site03/index.html" target="blank"><img src="./img/site03.png" alt="나뚜루 클론코딩 사이트 목업"></a>
+        </div>
+        <div class="contents">
+          <h1 class="tit">나뚜루 클론코딩</h1>
+          <ul class="content">
+            <li>구현</li>
+            <li>PC</li>
+            <li>작업시간 : 7시간</li>
+            <li>PlugIn : swiper</li>
+            <li>기여도 : 100%</li>
+          </ul>
+          <ul class="link">
+            <li style="width: 100%;"><a href="./site03/index.html" target="blank">사이트 바로가기</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

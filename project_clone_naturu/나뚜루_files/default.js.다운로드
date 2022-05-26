@@ -1,0 +1,199 @@
+
+$(function(){
+	
+	// menu list size layer
+	$('.btn_open_content').on('click', function(e){
+		e.preventDefault();
+		$('.size_open_content').toggle();
+		if($('.btn_open_content').hasClass('on')){
+			$(this).removeClass('on')
+			$(this).text('내용 열기');
+		}else{
+			$(this).addClass('on')
+			$(this).text('내용 접기');
+		}
+	});
+	
+	
+	// menu detail info_nutrient layer
+	$('.btn_info_nutrient').on('click', function(e){
+		e.preventDefault();
+		$('.info_nutrient').css({display:'block'})
+	});
+	$('.btn_close_info').on('click', function(e){
+		e.preventDefault();
+		$('.info_nutrient').css({display:'none'})
+	});
+	
+	//아이콘 마우스오버시 바뀜
+	var icon_list = $('.buy_rolling_wrap li');
+	icon_list.each(function(){
+		if ($(this).find('img').attr('src').indexOf('_on') > -1){
+			$(this).find('img').attr('src',$(this).find('img').attr('src').replace('_on.gif','.gif'))
+		}	
+		
+		$(this).find('a').mouseover(function(){
+			$(this).find('img').attr('src',$(this).find('img').attr('src').replace('.gif','_on.gif'))
+		})
+		$(this).find('a').mouseleave(function(){
+			if ($(this).find('img').attr('src').indexOf('_on') > -1){
+				$(this).find('img').attr('src',$(this).find('img').attr('src').replace('_on.gif','.gif'))
+			}	
+		})
+	})
+
+	// header instagram
+	$('.btn_insta').on('click', function(e){
+		e.preventDefault();
+		//$('.instagram_wrap').show();
+		window.open("https://www.instagram.com/official.natuur/", "natuur_insta")
+	});
+	$('.btn_insta_close').on('click', function(e){
+		e.preventDefault();
+		$('.instagram_wrap').hide();
+	});
+
+	/* 회원등급 레이어팝업 띄우기 */
+	$('.open_popup_grade').on('click', function(e){
+		e.preventDefault();
+		$('.popup_grade').show();
+	});
+
+	$('.close_popup_grade').on('click', function(e){
+		e.preventDefault();
+		$('.popup_grade').hide();
+	});
+
+});
+
+var GNB = function(){
+	var timer = null;
+	
+	function init(){
+		$(".gnb_sub_menu").css({"opacity":0});
+		$(".gsm_bg").css({"opacity":0});
+		
+		addEvents();
+	}
+	
+	function addEvents(){
+		
+		$(".gnb_menu>li>a").on("mouseenter focus", function(e){
+			
+			$(".gnb_sub_menu").show().stop().animate({"opacity":1},300);
+			$(".gsm_bg").show().stop().animate({"opacity":1},300);
+			destroyTimer();
+		}).on("mouseleave blur", function(e){
+			createTimer();
+		});
+		
+		$(".gnb_sub_menu").on("mouseenter", function(e){
+			e.preventDefault();
+			
+			destroyTimer();
+		}).on("mouseleave", function(e){
+			createTimer();
+			/*$(".gnb_sub_menu").stop().animate({"opacity":0},400,function(){
+				$(".gnb_sub_menu").hide();			
+			});
+			
+			$(".gsm_bg").stop().animate({"opacity":0},400,function(){
+				$(".gsm_bg").hide();			
+			});
+	 		*/				
+		});
+		
+		$(".gnb_sub_menu a").on("focus", function(e){
+			destroyTimer();
+		}).on("blur", function(e){
+			createTimer();
+		});
+	}
+	
+	function createTimer(){
+		timer = setTimeout(function(){
+			
+			$(".gnb_sub_menu").stop().animate({"opacity":0},300,function(){
+				$(".gnb_sub_menu").hide();			
+			});
+			
+			$(".gsm_bg").stop().animate({"opacity":0},300,function(){
+				$(".gsm_bg").hide();			
+			});
+			
+		}, 300);
+	}
+	
+	function destroyTimer(){
+		clearTimeout(timer);
+	}
+	
+	return {
+		init: init
+	};
+};
+
+(function($){
+	$(function(){
+		
+		new GNB().init();
+		
+		// family site
+		$(".family_list01>a").on("click", function(e){
+			e.preventDefault();
+			
+			var selectValue = $(".family_list01>select").val();			
+			
+			window.open(selectValue);
+		});	
+	});
+})(jQuery);
+
+//placeholder
+var textPlaceHolderInit = function(){
+
+	var havePlaceholder = false;
+	var input = document.createElement("input");
+	havePlaceholder = ("placeholder" in input);
+	
+	if(!havePlaceholder){
+		$("input[type=text], input[type=password], textarea").each(function(idx, obj){
+			var _this = $(this);
+			var placeholderAttr = "placeholder";
+			
+			var placeholderText = _this.attr(placeholderAttr);
+			/*
+			if(_this.val() == ""){
+				_this.val(placeholderText);
+			}
+			*/
+			
+			_this.before("<span class=\"placeholder_guidetext\"></span>");
+			var prevGuideText = _this.prev(".placeholder_guidetext");
+			prevGuideText.css({position:"absolute"}).text(placeholderText);
+			prevGuideText.hide();
+			if(_this.val() == ""){
+				prevGuideText.show();
+			}
+
+			prevGuideText.addClass("placeholder_text");
+
+			_this.bind("mousedown focus", function(e){
+				prevGuideText.hide();
+			}).bind("blur", function(e){
+				if($(this).val() == ""){
+					prevGuideText.show();
+				}
+			});
+
+			prevGuideText.bind("mousedown", function(e){
+				$(this).hide();
+				setTimeout(function(){
+					_this.focus();
+				}, 100);
+			});
+		});
+	}
+	
+};
+$(function(){textPlaceHolderInit();});

@@ -1,0 +1,142 @@
+@charset "UTF-8";
+@media (min-width: 1367px) {
+  .contents {
+    width: 16%;
+    height: 24%;
+    font-size: 12px;
+  }
+}
+@media (max-width: 1260px) {
+  .tit {
+    font-size: 1.5em;
+  }
+}
+@media (max-width: 1024px) and (max-height: 1024px) {
+  .site01 {
+    background-position: -100px 80px;
+    background-size: 130%;
+  }
+  .site02 {
+    background-position: 0 80px;
+    background-size: 120%;
+  }
+  .site03 {
+    background-position: 0 80px;
+    background-size: 150%;
+  }
+  .contents {
+    width: 90%;
+    height: 30%;
+  }
+  @media (max-height: 900px) {
+    .contents {
+      height: 40%;
+    }
+  }
+  @media (max-height: 680px) {
+    .contents {
+      height: 42%;
+    }
+    .tit {
+      font-size: 1.5em;
+    }
+  }
+  @media (max-height: 610px) {
+    .contents {
+      height: 42%;
+    }
+    .tit {
+      font-size: 1.3em;
+    }
+    .content {
+      font-size: 0.8em;
+    }
+    .link a {
+      width: 90px;
+      height: 25px;
+      font-size: 0.8em;
+      line-height: 25px;
+    }
+  }
+}
+@media (max-width: 695px) {
+  #menu li a {
+    padding: 10px 1em;
+  } 
+  .site01 {
+    background-position: -40px 80px;
+    background-size: 130%;
+  }
+  .site02 {
+    background-position: 0 80px;
+    background-size: 120%;
+  }
+  .site03 {
+    background-position: 0 80px;
+    background-size: 180%;
+  }
+  .contents {
+    right: 50%;
+    transform: translateX(50%);
+  }
+  .tit {
+    font-size: 1.7em;
+  }
+  .info {
+    width: 90%;
+    height: 130px;
+    top: -200px;
+    left: calc(50% - 45%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  @keyframes infoAni {
+    0% { top: -200px; }
+    50% { top: -180px; }
+    100% { top: -200px; }
+  }
+  .notice {
+    width: 100%;
+    font-size: 14px;
+    margin-right: 0;
+    margin-top: 10px;
+  }
+  button {
+    width: 50%;
+    position: static;
+    height: 30px;
+    margin-top: 20px;
+  }
+  @media (max-width: 360px) {
+    .contents {
+      height: 30%;
+    }
+    .tit {
+      font-size: 1em;
+    }
+    .content {
+      font-size: 12px;
+      margin-top: 5px;
+    }
+    .link {
+      margin: 5px auto 0px auto;
+      justify-content: space-evenly;
+    }
+    .link a {
+      width: 70px;
+      font-size: 12px;
+    }
+    .info {
+      width: 50%;
+      left: calc(50% - 25%);
+    }
+    .notice {
+      font-size: 11px;
+    }
+    button {
+      margin-top: 10px;
+      font-size: 11px;
+    }
+  }
+}
