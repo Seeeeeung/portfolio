@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>대한민국 구석구석</title>
+
+  <!-- Common CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="./img/logo/favicon.png">
+  <link rel="stylesheet" href="css/btn-more.css">
+  
+  <!-- Media Query CSS -->
+  <link rel="stylesheet" href="css/media-style.css">
+
+  <!-- Media Browser IE CSS -->
+  <link rel="stylesheet" href="css/IE.css">
+
+  <!--Slick-slider CSS-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+
+  
+  <!-- jQuery Set -->
+  <script src="js/jquery-3.6.0.js"></script>
+
+  <!-- Sliding Jquery -->  
+  <script src="js/jquery.scrollTo.min.js"></script>
+
+  <!-- Slide-slider Javascript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
+  <script src="js/slick.js"></script>
+
+  <!-- typeit javascript -->
+    <script src="https://unpkg.com/typeit@8.0.2/dist/index.umd.js"></script>
+</head>
+<body>
+  <section id="index">
+    <div class="scroll-down">
+      <h1 class="blind">아래로 스크롤 하려면 Scroll Down 이미지를 클릭하세요</h1>
+      <a href="#main"><img src="img/btn/scroll-down.png" alt="scroll down"></a>
+    </div>
+    <div id="main">
+      <header>
+        <nav class="inner">
+          <div class="head-logo">
+            <a href="#"><img src="img/logo/logo_msummer.png" alt="대한민국 구석구석"></a>
+          </div>
+          <ul class="gnb">
+            <li><a href="#main">주변</a></li>
+            <li><a href="#contry">지역</a>
+              <ul class="sub">
+                <li><a href="#none">서울 , 경기도</a></li>
+                <li><a href="#none">강원도</a></li>
+                <li><a href="#none">충청남도</a></li>
+                <li><a href="#none">충청북도</a></li>
+                <li><a href="#none">경상북도</a></li>
+                <li><a href="#none">경상남도</a></li>
+                <li><a href="#none">전라북도</a></li>
+                <li><a href="#none">전라남도</a></li>
+                <li><a href="#none">제주도</a></li>
+                <li><a href="#none">독도</a></li>
+              </ul>
+            </li>
+            <li><a href="#popular-place">인기</a>
+              <ul class="sub">
+                <li><a href="#none">SNS</a></li>
+                <li><a href="#none">실시간</a></li>
+                <li><a href="#none">축제</a></li>
+                <li><a href="#none">코스</a></li>
+              </ul>
+            </li>
+            <li><a href="#thema-travel">테마</a>
+              <ul class="sub">
+                <li><a href="#none">랜선</a></li>
+                <li><a href="#none">힐링</a></li>
+                <li><a href="#none">데이트</a></li>
+                <li><a href="#none">우정</a></li>
+                <li><a href="#none">효도</a></li>
+              </ul>
+            </li>
+            <li><a href="#promotion">이벤트</a>
+              <ul class="sub">
+                <li><a href="#none">프로모션</a></li>
+                <li><a href="#none">구독</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="hash-wrap icon">
+            <span class="blind">태그 전체보기</span>
+            <ul class="hash-slider">
+              <li><a href="#none"># 여행구독</a></li>
+              <li><a href="#none"># 캠핑&amp;차박</a></li>
+              <li><a href="#none"># 머드맥스</a></li>
+              <li><a href="#none"># 가을여행</a></li>
+              <li><a href="#none"># 테마여행</a></li>
+              <li><a href="#none"># 야경명소</a></li>
+              <li><a href="#none"># 바다여행</a></li>
+              <li><a href="#none"># 당일치기여행</a></li>
+              <li><a href="#none"># 걷기좋은길</a></li>
+            </ul>
+          </div>
+          <div class="trigger">
+            <span class="blind">햄버거 메뉴</span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+      </header>
+      <div class="inner container">
+        <p id="typing-title"></p>
+        <form >
+          <input id="box-search" type="text" placeholder="지역 또는 시,도,군 을 입력하세요." title="지역 또는 시,도,군 을 입력하세요.">
+          <button type="submit"><i class="fa fa-search" title="검색 아이콘"></i></button>
+        </form>
+        <div class="scroll-em">
+          <p>SCROLL</p>
+          <div class="box-dott"></div>
+        </div>
+      </div>
+      <aside>
+        <a href="#main" class="search" title="검색"><i class="fa fa-search" title="검색 아이콘"></i></a>
+        <a href="#none" class="my-location" title="내 주변"><i class="fa fa-location-arrow" title="위치 아이콘"></i></a>
+        <a href="#" class="top" title="위로가기"><i class="fa fa-chevron-up" title="up 아이콘"></i></a>
+      </aside>
+    </div>
+  </section>
+
+  <section id="contry">
+    <div class="inner">
+      <h1 class="blind">지역별 여행지 소개</h1>
+      <p class="click-icon">
+        <strong>Click !</strong>
+        <i class="fa fa-hand-o-down" title="아래를 가리키는 손가락 아이콘"></i>
+      </p>
+      <div class="list">
+        <div class="title">
+          <p class="contry-desc" data-thumb="0">
+            동해를 달리는<br>
+            신상 랜드마크<br>
+            <b>울진 죽변</b>
+            <strong> 스카이레일</strong>
+          </p>
+          <p class="contry-desc" data-thumb="1">
+            100년의 세월을 간직한<br>
+            한옥을 만끽하고 싶다면,<br>
+            <b>전남 담양</b>
+            <strong> 고택한옥</strong>
+          </p>
+          <p class="contry-desc" data-thumb="2">
+            세상 평화로운 풍경,<br>
+            시티투어<br>
+            <b>랜선 여행</b>
+            <strong> 부여</strong>
+          </p>
+          <p class="contry-desc" data-thumb="3">
+            바라만봐도<br>
+            힐링이 절로되는,<br>
+            <b>수도권</b>
+            <strong> 물멍 카페</strong>
+          </p>
+          <p class="contry-desc" data-thumb="4">
+            심장이 쫄깃해지는<br>
+            아찔한 풍경!<br>
+            <b>담양군</b>
+            <strong> 경비행기 체험</strong>
+          </p>
+          <p class="contry-desc" data-thumb="5">
+            찾았다 <br>
+            나의 무릉도원<br>
+            <b>와인과 함께</b>
+            <strong> 함양 여행</strong>
+          </p>
+          <p class="contry-desc" data-thumb="6">
+            별바다 부산<br>
+            야간관광 시리즈<br>
+            <b>부산 야경</b>
+            <strong> 설렘 스팟</strong>
+          </p>
+        </div>
+        <div class="btn-more">
+          <a href="#none" title="더보기">
+            <span></span>
+            <span class="masker">
+              <span>MORE VIEW</span>
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="content">
+        <div class="show-slide">
+          <div class="slide slick">
+            <div class="place" data-thumb="0">
+              <img src="./img/visual/visual01.png" alt="울진 죽변">
+              <p class="tit">울진</p>
+            </div>
+            <div class="place" data-thumb="1">
+              <img src="./img/visual/visual02.png" alt="전남 담양">
+              <p class="tit">담양</p>
+            </div>
+            <div class="place" data-thumb="2">
+              <img src="./img/visual/visual03.png" alt="부여 시티투어">
+              <p class="tit">부여</p>
+            </div>
+            <div class="place" data-thumb="3">
+              <img src="./img/visual/visual04.png" alt="수도권 물멍카페">
+              <p class="tit">수도권</p>
+            </div>
+            <div class="place" data-thumb="4">
+              <img src="./img/visual/visual05.png" alt="담양군 경비행기 체험">
+              <p class="tit">담양</p>
+            </div>
+            <div class="place" data-thumb="5">
+              <img src="./img/visual/visual06.png" alt="함양">
+              <p class="tit">함양</p>
+            </div>
+            <div class="place" data-thumb="6">
+              <img src="./img/visual/visual07.png" alt="부산 야경">
+              <p class="tit">부산</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="recomend">
+    <h1 class="blind">추천 여행 코스</h1>
+    <div id="popular-place">
+      <div class="inner">
+        <div class="popular-tit">
+          <h2 class="tit web-font">#SNS 인기 관광지</h2>
+          <div class="box-bg"></div>
+        </div>
+        <div class="content">
+          <div class="box-inner">            
+            <div class="box-place">
+              <div class="place">
+                <img src="./img/sns-search/gohado.png" alt="">
+                <a href="#none" class="text">
+                  <p class="desc-tit"><b>목포</b></p>
+                  <p class="desc">고하도 전망대</p>
+                  <i class="fa fa-plus-circle" title="더보기"></i>
+                </a>
+              </div>
+              <div class="place">
+                <img src="./img/sns-search/kimcheon.jpg" alt="">
+                <a href="#none" class="text">
+                  <p class="desc-tit"><b>김천</b></p>
+                  <p class="desc">사대명공원 평화의 탑</p>
+                  <i class="fa fa-plus-circle" title="더보기"></i>
+                </a>
+              </div>
+              <div class="place">
+                <img src="./img/sns-search/suwon.jpg" alt="">
+                <a href="#none" class="text">
+                  <p class="desc-tit"><b>수원</b></p>
+                  <p class="desc">화성행궁 플라잉수원</p>
+                  <i class="fa fa-plus-circle" title="더보기"></i>
+                </a>
+              </div>
+              <div class="place">
+                <img src="./img/sns-search/wonju.jpg" alt="">
+                <a href="#none" class="text">
+                  <p class="desc-tit"><b>원주</b></p>
+                  <p class="desc">안도 다다오의 뮤지엄 산</p>
+                  <i class="fa fa-plus-circle" title="더보기"></i>
+                </a>
+              </div>
+              <div class="place">
+                <img src="./img/sns-search/yeoncheon.jpg" alt="">
+                <a href="#none" class="text">
+                  <p class="desc-tit"><b>연천</b></p>
+                  <p class="desc">한탄강 재인폭포</p>
+                  <i class="fa fa-plus-circle" title="더보기"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="btn-more">
+            <a href="#none" title="더보기">
+              <span></span>
+              <span class="masker">
+                <span>MORE VIEW</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="thema-travel" class="inner">
+      <h2 class="tit"><img src="./svg/title-hilling.svg" alt="힐링 테마 여행"></h2>
+      <div class="box-thema">
+        <div class="thema-line">
+            <a href="#none"> 
+              <img src="./img/hilling/tema-01.png" alt="">
+              <p>
+                인천&amp;강화<br>
+                평화 여행코스
+              </p>
+            </a>
+            <a href="#none"> 
+              <img src="./img/hilling/tema-02.jpg" alt="">
+              <p>
+                광주호<br>
+                호수생태원
+              </p>
+            </a>
+        </div>
+        <div class="thema-line">
+            <a href="#none">
+              <img src="./img/hilling/tema-03.jpg" alt="">
+              <p>
+                강진<br>
+                가우도
+              </p>
+            </a>
+            <a href="#none">
+              <img src="./img/hilling/tema-04.png" alt="">
+              <p>
+                전남 해남군<br>
+                해마루 힐링숲
+              </p>
+            </a>
+            <a href="#none">
+              <img src="./img/hilling/tema-05.png" alt="">
+              <p>
+                대구&amp;경북<br>
+                야간 명소
+              </p>
+            </a>
+        </div>
+        <div class="thema-line">
+            <a href="#none">
+              <img src="./img/hilling/tema-06.jpg" alt="">
+              <p>
+                순창<br>
+                풍경여행
+              </p>
+            </a>
+            <a href="#none">
+              <img src="./img/hilling/tema-07.png" alt="">
+              <p>
+                강원도<br>
+                영월 
+              </p>
+            </a>
+            <a href="#none">
+              <img src="./img/hilling/tema-08.png" alt="">
+              <p>
+                서울<br>
+                복합 문화 공간
+              </p>
+            </a>
+        </div>
+      </div>
+      <div class="btn-more">
+        <a href="#none" title="더보기">
+          <span></span>
+          <span class="masker">
+            <span>MORE VIEW</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="promotion">
+    <div class="inner outline">
+      <h1 class="tit"><span class="web-font">#</span> 즐거운 여행을 위한<br><b>다양한 프로모션</b>을 확인하세요</h1>
+      <ul class="box-fade">
+        <li><img src="./img/ad-event/event-fade01.png" alt="사무실 탈출 프로젝트 반차내고 떠나는 4시간 여행 코스 오늘은 반차내고 싶은날 당신의 기분은? / 로또보다 행복한 계획 짜보기 / 나만의 4시간 여행 공유하기"></li>
+        <li><img src="./img/ad-event/event-fade02.png" alt="더 많은 여행지가 궁굼해? / #감성적인 #내향적인 #상상하는 #관심받고 싶은 소심한 관종 INFP의 랜선여행"></li>
+        <li><img src="./img/ad-event/event-fade03.png" alt="대한민국 구석구석 스토어 WALLPAPER / 소장하고 싶은 대한민국 구석구석의 여행지 사진을 저장! 내 PC, 스마트 폰, 태블릿의 배경화면으로 설정하여, 나의 일상 속에서 여행을 만나보세요."></li>
+        <li><img src="./img/ad-event/event-fade04.png" alt="월간 19 투어 부산편 / 여행의 설렘을 되돌리는 일구투어, 부산 여행의 심쿵포인트 19가지! /대한민국 구석구석 X 하나투어"></li>
+        <li><img src="./img/ad-event/event-fade05.png" alt="2021 비대면 안심관광지 25선"></li>
+      </ul>
+      <div class="box-hover slick">
+        <a href="#none" class="perspect"><img src="./img/ad-event/event01.png" alt="사무실 탈출 프로젝트"></a>
+        <a href="#none" class="perspect"><img src="./img/ad-event/event02.png" alt="소심한 관종 INFP의 랜선여행"></a>
+        <a href="#none" class="perspect"><img src="./img/ad-event/event03.png" alt="WALLPAPER"></a>
+        <a href="#none" class="perspect"><img src="./img/ad-event/event04.png" alt="월간 19투어"></a>
+        <a href="#none" class="perspect"><img src="./img/ad-event/event05.png" alt="안심관광지 25선"></a>
+      </div>
+    </div>
+    <div class="ad">
+      <a href="#none"><img src="./img/visual/banner.png" alt="대한민국 구석구석 핫플 정기배송 가볼래~터 매월 대한민국을 당신의 눈 앞에 배송합니다! 한국관광공사가 발견한 보석같은 여행지부터, 관광 기업의 신상 여행 정보까지 국내여행정보를 큐레이션 하는 '가볼래-터' 서비스 OPEN! / 가볼래-터 '구독'하고, 매월 댓글 미션에 참여하면 초간단 레벨업! / 레벨 2 구독자는 다음달 레터 속에 여행 체험권 & 여행 럭키박스 교환권이 담긴 '여행복권'을 함께 받아볼수 있어요!"></a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="inner">
+      <div class="sns">
+        <div class="tit">
+          <p>
+            SNS로 만나는
+          </p>
+          <img src="./img/logo/logo_mwinter.png" alt="대한민국 구석구석">
+        </div>
+        <div class="icons">
+          <a href="#none">
+            <div class="icon">
+              <img src="./img/footbanner/icon-sns01.png" alt="">
+              <svg x="0px" y="0px" viewBox="0 0 120 126">
+                <circle cx="60" cy="63" r="56.35" ></circle>
+              </svg>
+            </div>
+            <span>블로그</span>
+          </a>
+          <a href="#none">
+            <div class="icon">
+              <img src="./img/footbanner/icon-sns02.png" alt="">
+              <svg x="0px" y="0px" viewBox="0 0 120 126">
+                <circle cx="60" cy="63" r="56.35" ></circle>
+              </svg>
+            </div>
+            <span>포스트</span>
+          </a>
+          <a href="#none">
+            <div class="icon">
+              <img src="./img/footbanner/icon-sns03.png" alt="">
+              <svg x="0px" y="0px" viewBox="0 0 120 126">
+                <circle cx="60" cy="63" r="56.35" ></circle>
+              </svg>
+            </div>
+            <span>페이스북</span>
+          </a>
+          <a href="#none">
+            <div class="icon">
+              <img src="./img/footbanner/icon-sns04.png" alt="">
+              <svg x="0px" y="0px" viewBox="0 0 120 126">
+                <circle cx="60" cy="63" r="56.35" ></circle>
+              </svg>
+            </div>
+            <span>트위터</span>
+          </a>
+          <a href="#none">
+            <div class="icon">
+              <img src="./img/footbanner/icon-sns05.png" alt="">
+              <svg x="0px" y="0px" viewBox="0 0 120 126">
+                <circle cx="60" cy="63" r="56.35" ></circle>
+              </svg>
+            </div>
+            <span>카카오스토리</span>
+          </a>
+          <a href="#none">
+            <div class="icon">
+              <img src="./img/footbanner/icon-sns06.png" alt="">
+              <svg x="0px" y="0px" viewBox="0 0 120 126">
+                <circle cx="60" cy="63" r="56.35" ></circle>
+              </svg>
+            </div>
+            <span>유튜브</span>
+          </a>
+          <a href="#none">
+            <div class="icon">
+              <img src="./img/footbanner/icon-sns07.png" alt="">
+              <svg x="0px" y="0px" viewBox="0 0 120 126">
+                <circle cx="60" cy="63" r="56.35" ></circle>
+              </svg>
+            </div>
+            <span>인스타그램</span>
+          </a>
+        </div>
+      </div>
+      <div class="ad-info">
+        <a href="#none"><img src="./img/footbanner/fot_link_banner1.gif" alt="한국관광 데이터랩"></a>
+        <a href="#none"><img src="./img/footbanner/fot_link_banner2.gif" alt="대한민국 구석구석 Partners"></a>
+        <a href="#none"><img src="./img/footbanner/fot_link_banner3.gif" alt="관광정보 수정/신규 요청"></a>
+        <a href="#none"><img src="./img/footbanner/fot_link_banner4.gif" alt="여행 가이드북"></a>
+        <a href="#none"><img src="./img/footbanner/fot_link_banner5.gif" alt="대한민국 구석구석 WALLPAPER"></a>
+      </div>
+      <div class="link">
+        <div class="btm-menu">
+          <a href="#none">개인정보처리방침</a>
+          <a href="#none">이용약관</a>
+          <a href="#none">저작권정책</a>
+          <a href="#none">고객서비스헌장</a>
+          <a href="#none">전자우편무단수집거부</a>
+          <a href="#none">Q &amp; A</a>
+          <a href="#none">찾아오시는 길</a>
+        </div>
+        <div class="site">
+          <label for="info01"></label>
+          <select name="tour-info" id="info01" class="relation">
+            <option value="">관광정보</option>
+            <option value="">베니키아</option>
+            <option value="">고캠핑</option>
+            <option value="">두루누비</option>
+            <option value="">관광불편신고센터</option>
+            <option value="">공공 와이파이</option>
+            <option value="">농촌여행 웰촌</option>
+            <option value="">템플스테이</option>
+            <option value="">세이프스테이</option>
+            <option value="">테마여행 10선</option>
+            <option value="">관광두레</option>
+            <option value="">K-STYLE HUB</option>
+            <option value="">관광사진 갤러리</option>
+            <option value="">스마트 쇼핑패스</option>
+            <option value="">TourAPI3.0</option>
+          </select>
+
+          
+          <label for="info02"></label>
+          <select name="agency" id="info02" class="relation">
+            <option value="">유관기관</option>
+            <option value="">외교통상부 해외 안전여행</option>
+            <option value="">대한민국의 아름다운 영토 독도</option>
+            <option value="">박물관 길위의 인문학</option>
+            <option value="">전남 관광지 순환버스 남도한바퀴</option>
+            <option value="">국가mice포텔</option>
+            <option value="">국립현대미술관</option>
+            <option value="">경기관광공사</option>
+            <option value="">제주관광공사</option>
+            <option value="">부산관광공사</option>
+            <option value="">인천관광공사</option>
+            <option value="">서울관광재난</option>
+            <option value="">한국철도공사</option>
+            <option value="">국립중앙박물관</option>
+            <option value="">문화체육관광부</option>
+            <option value="">한국신림복지진흥원</option>
+            <option value="">디엠지기&#40;DMZIGI&#41;</option>
+            <option value="">한국방문위원회</option>
+            <option value="">문화가 있는 날</option>
+            <option value="">인문360º</option>
+            <option value="">한국도로공사</option>
+          </select>
+        </div>
+      </div>
+      <div class="foot-info">
+        <div class="copyright">
+          <p class="copy">
+            <img src="./img/footbanner/logo_foot.png" alt="(C)한국관광공사">
+          </p>
+          <address>
+            우&#41; 26464강원도 원주시 세계로 10<br>
+            TEL : 033-738-3000 사업자등록번호 : 202-81-50707 <br>
+            통신판매업신고 : 제2009-서울중구-1234호<br>
+          </address>
+        </div>
+        <div class="foot-logo">
+          <a href="#none"><img src="./img/footbanner/foot-logo-01.png" alt="문화체육관광부"></a>
+          <a href="#none"><img src="./img/footbanner/foot-logo-02.png" alt=""></a>
+          <a href="#none"><img src="./img/footbanner/foot-logo-03.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="modal-location">
+    <div class="notice">
+      <div class="tit">
+        <p class="logo-text">대한민국 구석구석</p>
+        <h1 class="tit">"내 주변"<br>시스템<br>점검 안내</h1>
+        <i class="fa fa-cogs"></i>
+      </div>
+      <p class="content">
+        안녕하세요.<br>
+        대한민국 구석구석을 사랑해주시는 고객님께 감사드립니다.<br>
+        시스템 점검으로 서비스 이용이 중지되오니 양해부탁드립니다.<br>
+        이용에 불편을 드려 죄송합니다.
+      </p>
+      <p class="sub-text">
+        앞으로도 고객님을 위하여 노력하는<br>대한민국 구석구석이 되겠습니다. 감사합니다.
+      </p>
+      <div class="close">
+        <button class="btn-close">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- javsscript -->
+  <script src="js/main.js"></script>
+  <script src="js/comm.js"></script>
+</body>
+</html>

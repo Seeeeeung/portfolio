@@ -1,0 +1,211 @@
+@charset "utf-8";
+/* start of big-desktop hover function */
+@media screen and (min-width: 1200px) and (max-width: 2000px) {
+  /* start of .more-btn */
+  h3 a:hover span:first-child,
+  h3 a:hover .masker span {
+    transform: translateX(10px);
+  }
+  h3 a:hover span {
+    color: #037f8c;
+  }
+  h3 a:hover span::after {
+    animation: bgswing 1s;
+    animation-fill-mode: forwards;
+  }
+  h3 a:hover .masker::before { 
+    transform: translateY(0);
+  }
+  /* end of .more-btn */
+  /* start of .tag-slider */
+  .tag-slider li:hover a{
+    color: #f2bba7;
+  }
+  .gnb > li:not(:first-child) .sub > li:hover a {
+    color: #04bf9d;
+  }
+  @keyframes up {
+    to {
+      top: -50px;
+    }
+  }
+  /* end of .tag-slider */
+  /* start of aside */
+  .btn-search:hover svg {
+    fill: #f2bba7;
+  }
+  .search:hover,
+  .location:hover {
+    right: -30px;
+    opacity: 1;
+    background-color: #f2bba7;
+  }
+  .btn-top-slide:hover .bg {
+    fill: #04bf9d;
+  }
+  .btn-top-slide:hover .btn-top {
+    fill: #fff;
+  }
+  .btn-top-slide:hover svg{
+    animation: beat 1.5s infinite;
+  }
+  .box-btn-slide button:hover {
+    opacity: 1;
+  }
+  /* end of aside */
+  .popular > h3:hover a {
+    color: #fff;
+    animation: text-swing 1s;
+    animation-fill-mode: forwards;
+  }
+  .popular > h3:hover a::after {
+    animation: bg-swing2 1s;
+    animation-fill-mode: forwards;
+  }
+  .popular li:hover a {
+    opacity: 1;
+    transition-delay: 0.5s;
+    background-color: #037e8c6b;
+  }
+  .popular li:hover {
+    flex-grow: 3;
+    opacity: 1;
+  }
+  .popular li:hover .line:nth-child(1) {
+    animation: run-line 0.2s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.2s;
+  }
+  .popular li:hover .line:nth-child(2) {
+    animation: run-line2 0.2s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.4s;
+  }
+  .popular li:hover .line:nth-child(3) {
+    animation: run-line 0.2s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.6s;
+  }
+  .popular li:hover .line:nth-child(4) {
+    animation: run-line2 0.2s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.8s;
+  }
+  /* end of popular */
+  .box-scroll-place > li:hover > a > span {
+    animation: slide-up 1s;
+    animation-fill-mode: forwards;
+  }
+  .box-scroll-place li:hover {
+    opacity: 1;
+    background-size: 200%;
+    box-shadow: 10px 10px 10px #555;
+  }
+  /* end of hilling */
+  .ad-banner img:hover {
+    filter: brightness(1.2);
+  }
+  .sns-icon .blog:hover b,
+  .sns-icon .blog:hover circle {
+    color: #31b349;
+    stroke: #31b349;
+  }
+  .sns-icon .post:hover b,
+  .sns-icon .post:hover circle {
+    color: #00c73c;
+    stroke: #00c73c;
+  }
+  .sns-icon .facebook:hover b,
+  .sns-icon .facebook:hover circle {
+    color: #3b5a9a;
+    stroke: #3b5a9a;
+  }
+  .sns-icon .twiter:hover b,
+  .sns-icon .twiter:hover circle {
+    color: #27a9e0;
+    stroke: #27a9e0;
+  }
+  .sns-icon .cacao:hover b,
+  .sns-icon .cacao:hover circle {
+    color: #fdd000;
+    stroke: #fdd000;
+  }
+  .sns-icon .youtube:hover b,
+  .sns-icon .youtube:hover circle {
+    color: #ed2123;
+    stroke: #ed2123;
+  }
+  .sns-icon .instar:hover b,
+  .sns-icon .instar:hover circle {
+    color: #d83083;
+    stroke: #d83083;
+  }
+  .sns-icon li:hover svg {
+    display: block;
+    position: absolute; 
+    top:-1px;
+  }
+  .site-banner li:hover {
+    filter: grayscale(0);
+  }
+  .btm-menu li:hover a {
+    color: #888;
+  }
+}
+/* end of media */
+/* start of desktop */
+@media screen and (max-width: 1799px) {      
+  .tit03 .svg-tit {
+    left: 270px;
+  }
+  section.hilling {
+    width: 100%;
+    margin: auto;
+    margin-top: 100px;
+  }
+  .none {
+    width: 40%;
+  }
+  .box-scroll-place .place01 {
+    height: 450px;
+    width: 40%;
+    margin: 0;
+  }
+  .box-scroll-place .place02 {
+    height: 300px;
+    width: 40%;
+    margin: 20px 0;
+  }
+  .box-scroll-place .place03 {
+    height: 250px;
+    width: 20%;
+    margin: 0 20px;
+  }
+  .box-scroll-place .place04 {
+    height: 200px;
+    width: 20%;
+    margin: -170px 20px;
+  }
+  .box-scroll-place .place05 {
+    height: 300px;
+    width: 20%;
+    margin: -270px 20px;
+  }
+  .box-scroll-place .place06 {
+    height: 200px;
+    width: 30%;
+    margin: 0;
+  }
+  .box-scroll-place .place07 {
+    height: 400px;
+    width: 30%;
+    margin: -239px 0;
+  }
+  .box-scroll-place .place08 {
+    height: 200px;
+    width: 30%;
+    margin: -170px 0;
+  }
+  /* end of hilling */
+}
+/* end of media */
